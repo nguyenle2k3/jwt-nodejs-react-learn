@@ -8,17 +8,23 @@ const handlerUserPage = async (req, res) => {
     return res.render("user.ejs", {userList});
 }
 
-const handlerCreateNewUser = (req, res) => {
+const handlerCreateNewUser = async (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
     let username = req.body.username;
 
-    userService.createNewUser(email, password, username);
-
-    return res.send("Create new user!");
+    await userService.createNewUser(email, password, username);
+    return res.redirect("/user");
 }
+
+const handlerDeleteUser = async (req, res) => {
+    await userService.deleteUser(req.params.id);
+    return res.redirect("/user");
+}
+
 module.exports = {
     handlerHelloWorld,
     handlerUserPage,
     handlerCreateNewUser,
+    handlerDeleteUser,
 }
