@@ -43,7 +43,7 @@
             </div>
 
             <div class="table-users mt-3">
-                <h3>Table Users:</h3>
+                <h3>List Users:</h3>
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
@@ -66,7 +66,9 @@
                                     <%= item.username %>
                                 </td>
                                 <td>
-                                    <button class="btn btn-warning">Edit</button>
+                                    <a class="btn btn-warning" href="/users/update-user/<%= item.id%>">
+                                        Edit
+                                    </a>
                                     <form style="display: inline;" action="/users/delete-user/<%= item.id%>"
                                         method="post">
                                         <button class="btn btn-danger">Delete</button>
