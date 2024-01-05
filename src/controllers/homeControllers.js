@@ -26,9 +26,10 @@ const getUpdateUser = async (req, res) => {
     let id = req.params.id;
     let user = await userService.getUserById(id);
     let userData = {};
-    if (user && user.length) {
-        userData = user[0];
-    }
+    userData = user;
+    // if (user && user.length) {
+    //     userData = user[0];
+    // }
     return res.render("update-user.ejs", {userData});
 }
 
