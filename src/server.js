@@ -16,6 +16,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 // init web routes
 initWebRouters(app);
 
+// // test connection
+// import connection from "./config/connectDB";
+// connection();
+
 // 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
