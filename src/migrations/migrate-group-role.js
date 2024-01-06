@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       roleId: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
