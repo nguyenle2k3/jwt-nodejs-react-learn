@@ -2,6 +2,7 @@ import express, { Router } from "express";
 import configViewEngine from "./config/viewEngine";
 import initWebRouters from "./routes/web";
 import bodyParser from 'body-parser';
+const cors = require('cors');
 require("dotenv").config();
 
 const app = express();
@@ -12,6 +13,8 @@ configViewEngine(app);
 // config body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(cors());
 
 // init web routes
 initWebRouters(app);
